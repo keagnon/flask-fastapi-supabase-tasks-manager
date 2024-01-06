@@ -1,71 +1,71 @@
-# API de Gestion de Tâches avec Flask, FastAPI, et PostgreSQL (Supabase)
+# Task Management API with Flask, FastAPI, and PostgreSQL (Supabase)
 
 ## Introduction
 
-Ce projet consiste en le développement d'une API robuste pour la gestion d'une liste de tâches, utilisant Flask API et FastAPI comme frameworks côté serveur, et Supabase comme base de données PostgreSQL. L'API permet la création, la mise à jour, la suppression, et la récupération des tâches, ainsi que la catégorisation et l'association à des utilisateurs.
+This project involves the development of a robust API for managing a task list, using Flask API and FastAPI as server-side frameworks, and Supabase as the PostgreSQL database. The API facilitates the creation, updating, deletion, and retrieval of tasks, as well as categorization and association with users.
 
-## Modélisation de la Base de Données
+## Database Modeling
 
 ### Table "Users"
 
-- `user_id` (Clé primaire)
+- `user_id` (Primary Key)
 - `username`
 - `email`
-- `password` (hashé)
+- `password` (hashed)
 
-Stocke les informations des utilisateurs, chaque utilisateur a un identifiant unique (`user_id`).
+Stores user information, where each user has a unique identifier (`user_id`).
 
 ### Table "Tasks"
 
-- `task_id` (Clé primaire)
+- `task_id` (Primary Key)
 - `title`
 - `description`
-- `completed` (Booléen)
+- `completed` (Boolean)
 - `due_date`
-- `user_id` (Clé étrangère liée à la table "Users")
+- `user_id` (Foreign Key linked to the "Users" table)
 
-Contient les détails des tâches, chaque tâche a un identifiant unique (`task_id`) et est associée à un utilisateur via la clé étrangère `user_id`.
+Contains details of tasks, where each task has a unique identifier (`task_id`) and is associated with a user through the foreign key `user_id`.
 
 ### Table "Categories"
 
-- `category_id` (Clé primaire)
+- `category_id` (Primary Key)
 - `name`
 
-Permet de catégoriser les tâches. Chaque catégorie a un identifiant unique (`category_id`) et peut être associée à plusieurs tâches.
+Allows categorization of tasks. Each category has a unique identifier (`category_id`) and can be associated with multiple tasks.
 
-## Utilisation
+## Schema Visualizer
 
-1. Cloner le dépôt.
+(Insert link or image of the schema visualizer)
 
-2. Installer les dépendances en utilisant `pip install -r requirements.txt`.
+## Usage
 
-3. Exécuter l'API avec Flask : `python mainFlask.py` ou avec FastAPI : `python mainFast.py`.
+1. Clone the repository.
 
-4. Accéder à l'API à l'adresse : [http://localhost:5000](http://localhost:3000) pour Flask ou [http://127.0.0.1:3000/docs](http://127.0.0.1:5000/docs) pour FastAPI.
+2. Install dependencies using `pip install -r requirements.txt`.
 
-## Fonctionnalités Principales pour FlaskAPI
+3. Run the API with Flask: `python mainFlask.py` or with FastAPI: `python mainFast.py`.
 
-- Obtenir la liste des tâches : GET /api/tasksmanager/tasks/
-- Créer une nouvelle tâche : POST /api/tasksmanager/tasks/
-- Mettre à jour une tâche existante : PUT /api/tasksmanager/tasks/<task_id>
-- Supprimer une tâche : DELETE /api/tasksmanager/tasks/<task_id>
+4. Access the API at: [http://localhost:5000](http://localhost:5000) for Flask or [http://127.0.0.1:3000/docs](http://127.0.0.1:3000/docs) for FastAPI.
 
-## Fonctionnalités Principales pour FastAPI
+## Main Features for FlaskAPI
 
-FastAPI génère automatiquement une documentation accessible à l'adresse : [http://127.0.0.1:3000/docs](http://127.0.0.1:3000/docs).
+- Get the list of tasks: GET /api/tasksmanager/tasks/
+- Create a new task: POST /api/tasksmanager/tasks/
+- Update an existing task: PUT /api/tasksmanager/tasks/<task_id>
+- Delete a task: DELETE /api/tasksmanager/tasks/<task_id>
+
+## Main Features for FastAPI
+
+FastAPI automatically generates documentation accessible at: [http://127.0.0.1:3000/docs](http://127.0.0.1:3000/docs).
 
 ## Configuration
 
-L'API utilise Flask et/ou Fast pour la gestion des routes. Les logs des requêtes sont enregistrés dans un fichier `logs.json` pour Flask. La politique de confidentialité est affichée à la racine de l'API.
+The API uses Flask and/or Fast for route management. Request logs are saved in a `logs.json` file for Flask. The privacy policy is displayed at the root of the API.
 
-## Auteur
+## Author
 
-[GBE Keagnon Grâce Helena](keagnon.gbe@gmail.com)
-
-## Licence
-
-Ce projet est sous licence MIT - voir le fichier LICENSE pour plus de détails.
+[GBE Keagnon Grâce Helena](mailto:keagnon.gbe@gmail.com)
 
 ## Documentation Sphinx ReadTheDocs
 
-La documentation complète est disponible dans le chemin suivant : `/docs/_build/index.html`.
+The complete documentation is available in the following path: `/docs/_build/index.html`.
