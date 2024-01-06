@@ -1,4 +1,4 @@
-from Dao.categoriesDAO import *
+from dao.categoriesDAO import *
 from model import categoriesM
 
 class categories:
