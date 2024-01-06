@@ -47,12 +47,69 @@ Allows categorization of tasks. Each category has a unique identifier (`category
 
 4. Access the API at: [http://localhost:5000](http://localhost:5000) for Flask or [http://127.0.0.1:3000/docs](http://127.0.0.1:3000/docs) for FastAPI.
 
-## Main Features for FlaskAPI
 
-- Get the list of tasks: GET /api/tasksmanager/tasks/
-- Create a new task: POST /api/tasksmanager/tasks/
-- Update an existing task: PUT /api/tasksmanager/tasks/<task_id>
-- Delete a task: DELETE /api/tasksmanager/tasks/<task_id>
+## Endpoints
+
+- **Get the list of tasks:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/tasks/`
+
+- **Create a new task:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/tasks/`
+
+- **Update an existing task:**
+  - **Method:** PUT
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>`
+
+- **Delete a task:**
+  - **Method:** DELETE
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>`
+
+- **Get Task by ID:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>`
+
+- **Filter Tasks by Status:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/tasks?status=<completed|not_completed>`
+
+- **Filter Tasks by Due Date Range:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/tasks?start_date=<start_date>&end_date=<end_date>`
+
+- **Assign Task to User:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>/assign/<user_id>`
+
+- **List Tasks for a User:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/users/<user_id>/tasks`
+
+- **Mark Task as Completed:**
+  - **Method:** PUT
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>/complete`
+
+- **Undo Task Completion:**
+  - **Method:** PUT
+  - **Endpoint:** `/api/tasksmanager/tasks/<task_id>/undo_complete`
+
+- **List Task Categories:**
+  - **Method:** GET
+  - **Endpoint:** `/api/tasksmanager/categories`
+
+- **Create New Task Category:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/categories`
+
+- **Update Task Category:**
+  - **Method:** PUT
+  - **Endpoint:** `/api/tasksmanager/categories/<category_id>`
+
+- **Delete Task Category:**
+  - **Method:** DELETE
+  - **Endpoint:** `/api/tasksmanager/categories/<category_id>`
+
 
 ## Main Features for FastAPI
 
