@@ -27,8 +27,8 @@ class categoriesDAO(ModelDAO.modeleDAO):
             if len(res)>0:
                 for r in res :
                     cat=categories()
-                    cat.SetCategoriesId(r[0])
-                    cat.SetCategoryName(r[1])
+                    cat.SetCategoriesId(r[0]) # Utilisez l'indice r[0] pour accéder au premier élément de la ligne
+                    cat.SetCategoryName(r[1]) # Utilisez l'indice r[1] pour accéder au deuxième élément de la ligne
                     list_categories.append(cat)
                 return list_categories
             else:
