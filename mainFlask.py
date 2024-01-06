@@ -11,7 +11,7 @@ app = Flask(__name__)
 
 CORS(app, ressources={fr"api/tasksmanager/*":{"origins":"*"}})
 
-#categories routes
+#categories routes available
 @app.route('/api/tasksmanager/categories',methods=['GET'])
 def getCategories():
     catC=categoriesC.categories.displayCategories()
