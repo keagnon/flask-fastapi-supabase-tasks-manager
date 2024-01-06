@@ -110,6 +110,21 @@ Allows categorization of tasks. Each category has a unique identifier (`category
   - **Method:** DELETE
   - **Endpoint:** `/api/tasksmanager/categories/<category_id>`
 
+- **Create a new user:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/create_user`
+
+- **Create a new role:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/create_role`
+
+- **Assign privileges to a role:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/assign_privileges`
+
+- **Assign a role to a user:**
+  - **Method:** POST
+  - **Endpoint:** `/api/tasksmanager/assign_role`
 
 ## Main Features for FastAPI
 
