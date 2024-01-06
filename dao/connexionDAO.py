@@ -1,5 +1,6 @@
 import psycopg2  # pip install psycopg2-binary
 import yaml # pip install PyYAML
+import os
 
 class ConnexionBD:
 
@@ -7,12 +8,12 @@ class ConnexionBD:
         self.cnx = None
         self.params = None
 
-    def getUserConnection(self):
+    def getConnexion(self):
         try:
-            print("- class visitor connexion is running ... \n\n")
+            print("- class connexionBD() is running ... \n\n")
             print("- config/Config.yml is loading ...")
             current_directory = os.path.dirname(os.path.abspath(__file__))
-
+            print(current_directory)
             # Chemin relatif vers le fichier YAML
             yaml_file_path = os.path.join(current_directory, "../config/config.yaml")
             # get file and data
@@ -25,7 +26,6 @@ class ConnexionBD:
                     port = config["port"]
                     usr = config["user"]["usr1"]
                     pwd = config["pwd"]["pwd1"]
-
 
                     self.cnx = psycopg2.connect(dbname=db,
                                   host=host,

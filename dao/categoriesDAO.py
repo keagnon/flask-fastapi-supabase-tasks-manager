@@ -2,14 +2,14 @@ from dao import ModelDAO
 from model.categoriesM import categories
 
 class categoriesDAO(ModelDAO.modeleDAO):
-    def ___init__(self):
+    def __init__(self):
         """
         Initilize categoriesDAO object by establising connexion to the data base
         """
         params =ModelDAO.modeleDAO.connect_object
         self.cur=params.cursor()
 
-    def findAll(self,keyfound) -> list[categories]:
+    def findAll(self) -> list[categories]:
         """
             Goal : list all recording inside categories table
             -----------------------------------------------------------
@@ -27,8 +27,8 @@ class categoriesDAO(ModelDAO.modeleDAO):
             if len(res)>0:
                 for r in res :
                     cat=categories()
-                    cat.SetCategoriesId(cat[0])
-                    cat.SetCategoryName(cat[1])
+                    cat.SetCategoriesId(r[0])
+                    cat.SetCategoryName(r[1])
                     list_categories.append(cat)
                 return list_categories
             else:
