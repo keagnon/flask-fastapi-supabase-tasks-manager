@@ -35,7 +35,7 @@ Allows categorization of tasks. Each category has a unique identifier (`category
 
 ## Schema Visualizer
 
-(Insert link or image of the schema visualizer)
+![Schema Visualizer](images/schema_visualizer.png)
 
 ## Usage
 
